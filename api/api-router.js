@@ -19,7 +19,7 @@ router.get("/shouts", restricted, (req, res, next) => {
     .catch(error => next(error));
 });
 
-router.post("/shouts", (req, res, next) => {
+router.post("/shouts", restricted, (req, res, next) => {
   Shouts.add(req.body)
     .then(shout => {
       res.status(201).json(shout);
