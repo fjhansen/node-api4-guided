@@ -7,7 +7,7 @@ const server = express();
 
 server.use(helmet());
 
-server.get('/', function(req, res) => {
+server.get("/", function (req, res) {
   res.status(200).json({ enviornment: process.env.NODE_ENV});
 })
 
